@@ -196,7 +196,7 @@ with tab2:
         scores.append(round(p * 100, 1))
 
     county_df["risk_score_%"] = scores
-    county_df = county_df.sort_values("risk_score_%", ascending=False)
+    county_df = county_df.sort_values("risk_score_%", ascending=False).reset_index(drop=True)
 
     fig, ax = plt.subplots(figsize=(10, 14))
     colors = ["#e76f51" if s > 57 else "#f4a261" if s > 43 else "#2a9d8f"
